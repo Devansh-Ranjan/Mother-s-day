@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Mother's Day</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <section id="intro" class="section">
+        <h1>You thought I forgot...</h1>
+        <button onclick="showSurprise()">Tap to find out</button>
+    </section>
+
+    <section id="main" class="section hidden">
+        <h1>How could I ever forget the most beautiful woman in the world?</h1>
+        <p>Happy Mother's Day, Mom!</p>
+        <img src="photo1.jpg" alt="Mom Photo 1">
+        <button onclick="nextSection('letter')">Next</button>
+    </section>
+
+    <section id="letter" class="section hidden">
+        <h2>A Letter from Devansh</h2>
+        <p>Dear Mom,</p>
+        <p>You're my inspiration, strength, and the purest soul I know. Thank you for everything.</p>
+        <p>Love, Devansh Ranjan</p>
+        <button onclick="nextSection('gallery')">Next</button>
+    </section>
+
+    <section id="gallery" class="section hidden">
+        <h2>Our Memories</h2>
+        <img src="photo2.jpg" alt="Memory 1">
+        <img src="photo3.jpg" alt="Memory 2">
+        <button onclick="nextSection('awards')">Next</button>
+    </section>
+
+    <section id="awards" class="section hidden">
+        <h2>Mom Awards</h2>
+        <ul>
+            <li>Best Hugger</li>
+            <li>Queen of Patience</li>
+            <li>Master Chef</li>
+        </ul>
+        <button onclick="nextSection('end')">Next</button>
+    </section>
+
+    <section id="end" class="section hidden">
+        <h2>Thank You, Mom</h2>
+        <p>This is just a small way to show how much you mean to me.</p>
+        <p>Love you forever,</p>
+        <p>– Devansh</p>
+    </section>
+
+    <script>
+        function showSurprise() {
+            document.getElementById('intro').classList.add('hidden');
+            document.getElementById('main').classList.remove('hidden');
+        }
+        function nextSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
